@@ -2,35 +2,38 @@ import React from 'react';
 
 const About = () => {
   const skills = [
-    "JavaScript", "React", "Node.js", "Tailwind CSS", "API Integration", "Role-Based Access Control (RBAC)"
+    "React", "Node.js", "Tailwind CSS", "API Integration", "Role-Based Access Control (RBAC)"
   ];
 
   return (
-    <section id="about" className="py-24 px-6 md:px-20 lg:px-40 bg-zinc-900 text-white">
+    <section className="min-h-[85vh] py-24 px-6 md:px-20 lg:px-40 bg-black text-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 flex items-center">
-          <span className="text-zinc-500 mr-4 font-mono text-xl">01.</span> About Me
+        <h2 className="text-2xl md:text-3xl font-bold font-heading mb-8 flex items-center">
+          <span className="text-blue-500 mr-3 font-mono text-lg">&gt;</span> About Me
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <p className="text-zinc-300 text-lg leading-relaxed mb-6">
-              15-year-old developer solving real-world problems with research and code. Currently building enterprise-level safety systems for Simvo Africa.
+        <div className="grid md:grid-cols-5 gap-12 items-start font-sans text-sm md:text-base leading-relaxed">
+          <div className="md:col-span-3">
+            <p className="text-gray-305 mb-6">
+              I build scalable systems using React, Node.js, and AI-driven research. Currently leading the frontend for the National Industrial Safety Reporting System (Nigeria).
             </p>
-            <p className="text-zinc-300 text-lg leading-relaxed mb-6">
-              Beyond my professional work, I actively teach JavaScript to my peers and regularly contribute to the web development community on r/webdev.
+            <p className="text-gray-400 text-sm font-mono border-l-2 border-blue-600 pl-4 py-1">
+              Community: Engaging with r/webdev, r/FullStack, and r/learnprogramming.
             </p>
           </div>
           
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-zinc-200">Technologies I work with:</h3>
-            <ul className="grid grid-cols-2 gap-3 text-zinc-400">
+          <div className="md:col-span-2 border border-gray-900 p-6 rounded-md bg-black">
+            <h3 className="text-sm font-bold font-heading mb-4 text-gray-200 border-b border-gray-900 pb-2">Skills</h3>
+            <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
-                <li key={index} className="flex items-center text-sm md:text-base">
-                  <span className="text-white mr-2 text-xs">▹</span> {skill}
-                </li>
+                <span 
+                  key={index} 
+                  className="border border-gray-800 text-gray-350 px-2.5 py-1 text-xs rounded-md font-sans"
+                >
+                  {skill}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>

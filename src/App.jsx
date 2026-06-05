@@ -1,32 +1,33 @@
 import React from 'react';
-import Hero from './components/Hero';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="bg-zinc-950 min-h-screen text-zinc-50 selection:bg-zinc-700 selection:text-white">
-      <header className="fixed w-full top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#hero" className="text-xl font-bold tracking-tighter">OI.</a>
-          <nav className="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
-            <a href="#about" className="hover:text-white transition-colors">About</a>
-            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          </nav>
-        </div>
-      </header>
+    <div className="bg-black min-h-screen text-white flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+      <Navbar />
       
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
 
-      <footer className="py-6 text-center text-zinc-500 text-sm bg-zinc-950 border-t border-zinc-900">
-        <p className="font-mono text-xs">Built by Oluwatobiloba Ilesanmi. React & Tailwind CSS.</p>
+      <footer className="py-8 text-center text-gray-500 text-xs bg-black border-t border-gray-900 font-heading">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
+          <a href="mailto:oluwatonilobailesanmi0001@gmail.com" className="hover:text-white transition-colors">oluwatonilobailesanmi0001@gmail.com</a>
+          <span className="hidden sm:inline text-gray-800">|</span>
+          <a href="tel:+2348060696104" className="hover:text-white transition-colors">+234 806 069 6104</a>
+          <span className="hidden sm:inline text-gray-800">|</span>
+          <a href="https://github.com/Tadbit-lab" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+        </div>
       </footer>
     </div>
   );
